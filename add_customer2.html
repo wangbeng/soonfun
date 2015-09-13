@@ -1,0 +1,134 @@
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title></title>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+<link href="css/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.datetimepicker.js" type="text/javascript"></script>  
+<script src="js/ajax.js" type="text/javascript"></script>  
+<link href="css/sf_crm.css" rel="stylesheet"/>
+
+</head>
+<body class="body_format"  onload="initialize()">
+	<form method="post" action="add_customer.php">
+	<div class="container">
+	<div class="send_information">
+		<div class="title">1、寄件人信息
+		</div>
+		<hr>
+		<div class="form_content">
+		客户来源:
+		<select name="customer_resource">
+					<option value='400电话'>400电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+					<option value='百度推广'>百度推广</option>
+					<option value='360推广'>360推广</option>
+		</select>  <br>
+		发货人姓名:
+		<input class="input_format" type="text" name="sender_username" >
+		<br>
+		手机:
+		<input class="input_format" type="text" name="sender_cellphone" >
+		<br>
+		起运地:
+        <input type="text" class="ajax input_format" id="inputUser" name="origin" value="" onfocus="inputFocus()" onkeydown="inputKeydown(event)" onblur="inputBlur()" />        
+        <div class="ajax" style= "position : absolute ;left : 84px;" id="showUser" name="showUser">
+            <!-- 此处添加搜索数据的结果，使用的是table标签 -->
+        </div>  
+    <br>
+    预计成交:
+    	<input class="input_format" id="form-control1" type="text" name="pre_done_time"/>     
+			<script type="text/javascript">
+				$(function () {			
+					$('#form-control1').datetimepicker({
+						lang: 'ch',
+						format: "Y-m-d H:i", //
+					});
+				});//end document.ready    
+			</script>  
+    <br>
+			</div>
+			
+			
+		<div class="form_content">
+		客户类型:
+			<select name="customer_type">
+					<option value='优质客户'>优质客户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+					<option value='普通客户'>普通客户</option>
+					<option value='VIP客户'>VIP客户</option>
+			</select>
+			<br>	
+		固话:
+		<input class="input_format" type="text" name="sender_telephone">
+			<br>
+		邮箱:
+		<input class="input_format" type="text" name="email">
+		<br>
+		目的地：
+        <input type="text" class="input_format" id="inputUser" name="origin" value="" onfocus="inputFocus()" onkeydown="inputKeydown(event)" onblur="inputBlur()" />        
+        <div  style= "position : absolute ;left : 84px;" id="showUser" name="showUser">
+            <!-- 此处添加搜索数据的结果，使用的是table标签 -->
+        </div>  
+    <br>
+			</div>
+		</div>
+		
+	<div class="goods_information">
+	<div class="title">2、货物信息:
+		</div>
+	<hr>
+	<div class="form_content">
+				物品类型:
+				<select name="goods_type">
+						<option value='特殊物品'>特殊物品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+						<option value='普通物品'>普通物品</option>
+				</select>
+				<br>
+			货物品名:
+			<input class="input_format" type="text" name="goods_name">
+			<br>
+			预计重量:
+			<input class="input_format" type="text" name="estimate_weight">
+			<br>
+			预计成交:
+    	<input class="input_format" id="form-control2" type="text" name="shipping_time"/>     
+			<script type="text/javascript">
+				$(function () {			
+					$('#form-control2').datetimepicker({
+						lang: 'ch',
+						format: "Y-m-d H:i", //鏍煎紡鍖栨棩鏈?
+					});
+				});//end document.ready    
+			</script>  
+			<br>
+			是否送箱:
+			<select style="width: 100px;margin: 1px;">
+					<option value='是' width="100px" name="is_giving_box">是</option>
+					<option value='否' width="100px" name="is_giving_box">否</option>
+			</select>	
+    <br>
+		</div>
+		</div>	
+		
+	<div class="comments">
+	<div class="title">3、备注信息:
+		</div>
+	&nbsp;回访时间:
+    	<input class="input_format" id="form-control3" type="text" name="visit_time"/>     
+			<script type="text/javascript">
+				$(function () {			
+					$('#form-control3').datetimepicker({
+						lang: 'ch',
+						format: "Y-m-d H:i", //
+					});
+				});//end document.ready    
+			</script>  
+    <br>
+  		<textarea style="	margin-left : 3px;;" rows="5" cols="82" name="note">
+			</textarea>
+		</div>	
+		</div>
+	<input style="align:center;"type="image" src="image/save.png" class="footer" alt="Submit" />
+	</form>
+	</body> 
+
+</html>
